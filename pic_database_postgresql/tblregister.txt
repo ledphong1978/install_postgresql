@@ -1,0 +1,25 @@
+สร้าง dbpiggy ก่อน
+==========================================
+CREATE SCHEMA postgres
+  AUTHORIZATION postgres;
+
+GRANT ALL ON SCHEMA postgres TO postgres;
+==========================================
+CREATE TABLE tblregister
+(
+  codepk integer NOT NULL,
+  codeid character varying(7),
+  sexfk character varying(5),
+  fullname character varying(60),
+  idcard character varying(13),
+  birthdate date,
+  banid character varying(10),
+  moo character varying(2),
+  regdate date,
+  CONSTRAINT tblregister_pkey PRIMARY KEY (codepk)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE tblregister
+  OWNER TO postgres;
